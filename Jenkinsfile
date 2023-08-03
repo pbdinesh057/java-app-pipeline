@@ -13,7 +13,7 @@ pipeline {
                 )
             }
         }
-        stage('Git checkout') {
+        stage('Maven Testing') {
             steps{
                 script{
                     mvnTest()  
