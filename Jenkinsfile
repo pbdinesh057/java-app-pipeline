@@ -13,6 +13,13 @@ pipeline {
                 )
             }
         }
+        stage('Git checkout') {
+            steps{
+                script{
+                    mvnTest()  
+                }
+            }
+        }
         // Add more stages as needed
     }
 }
