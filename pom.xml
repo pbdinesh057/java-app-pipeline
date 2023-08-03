@@ -18,8 +18,8 @@
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
-        <!-- Set the Java version to 17 -->
-        <java.version>17</java.version>
+        <!-- Set the Java version to 11 -->
+        <java.version>11</java.version>
     </properties>
 
     <dependencies>
@@ -68,11 +68,12 @@
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>
-                <!-- Use the appropriate version for Java 17 -->
-                <version>3.9.0</version>
+                <!-- Use the appropriate version for Java 11 -->
+                <version>3.9.1</version>
                 <configuration>
-                    <!-- Set the Java version to 17 -->
-                    <release>17</release>
+                    <!-- Set the Java version to 11 -->
+                    <source>${java.version}</source>
+                    <target>${java.version}</target>
                 </configuration>
             </plugin>
         </plugins>
