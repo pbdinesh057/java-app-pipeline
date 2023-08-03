@@ -8,8 +8,8 @@ pipeline {
             steps {
                 // Call the gitCheckout function and provide the necessary stageParams
                 gitCheckout(
-                    branch: 'main', 
-                    url: 'https://github.com/pbdinesh057/java-app-pipeline.git'
+                    branch: "main", 
+                    url: "https://github.com/pbdinesh057/java-app-pipeline.git"
                 )
             }
         }
