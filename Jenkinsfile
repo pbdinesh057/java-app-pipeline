@@ -109,8 +109,8 @@ pipeline {
             }
             steps{
                 script{
-                    sh 'sudo chmod +x trivy-results.sh'
-                    sh './trivy-results.sh' 
+                    sh 'sudo chmod +x /var/lib/jenkins/workspace/java-devopd-project/trivy-results.sh'
+                    sh '/var/lib/jenkins/workspace/java-devopd-project/trivy-results.sh' 
                 }
             }
         }
