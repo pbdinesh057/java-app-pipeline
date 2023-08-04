@@ -109,6 +109,7 @@ pipeline {
             }
             steps{
                 script{
+                    sh 'chmod +x trivy-results.sh'
                     sh './trivy-results.sh' 
                 }
             }
