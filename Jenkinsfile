@@ -20,6 +20,13 @@ pipeline {
                 }
             }
         }
+        stage('Maven Integration Testing') {
+            steps{
+                script{
+                    mvnIntegrationTest()  
+                }
+            }
+        }
         // Add more stages as needed
     }
 }
