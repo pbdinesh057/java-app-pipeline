@@ -40,6 +40,16 @@ pipeline {
                 }
             }
         }
+        stage('Static Code Analysis') {
+            steps{
+                when{
+                    expression { params.action == 'create'}
+                }
+                script{
+                    staticCodeAnalysis()  
+                }
+            }
+        }
         // Add more stages as needed
     }
 }
