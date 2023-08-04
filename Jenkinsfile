@@ -46,7 +46,10 @@ pipeline {
             }
             steps{
                 script{
-                    staticCodeAnalysis()  
+
+                    def SonarqubeCredentialId = 'sonar-api'
+                    staticCodeAnalysis(SonarqubeCredentialId)
+                      
                 }
             }
         }
