@@ -31,20 +31,20 @@ pipeline {
             }
         }
         stage('Maven Integration Testing') {
+            when{
+                expression { params.action == 'create'}
+            }
             steps{
-                when{
-                    expression { params.action == 'create'}
-                }
                 script{
                     mvnIntegrationTest()  
                 }
             }
         }
         stage('Static Code Analysis') {
+            when{
+                expression { params.action == 'create'}
+            }
             steps{
-                when{
-                    expression { params.action == 'create'}
-                }
                 script{
                     staticCodeAnalysis()  
                 }
