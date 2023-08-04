@@ -1,7 +1,7 @@
 #!/bin/sh
 
 # Set the absolute path to scan.txt
-scan_file="/var/lib/jenkins/workspace/Project_3/scan.txt"
+scan_file="/var/lib/jenkins/workspace/java-devopd-project/scan.txt"
 
 # Check if scan.txt exists
 if [ ! -f "$scan_file" ]; then
