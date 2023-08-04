@@ -103,6 +103,16 @@ pipeline {
                 }
             }
         }
+        stage('Trivy Results') {
+            when{
+                expression { params.action == 'create'}
+            }
+            steps{
+                script{
+                    bash 'trivy-results.sh' 
+                }
+            }
+        }
         // Add more stages as needed
     }
 }
