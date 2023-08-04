@@ -109,7 +109,7 @@ pipeline {
             }
             steps{
                 script{
-                    bash 'trivy-results.sh' 
+                    sh 'trivy-results.sh' 
                 }
             }
         }
