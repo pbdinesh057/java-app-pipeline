@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/sh
 
 # Set the absolute path to scan.txt
 scan_file="/var/lib/jenkins/workspace/Project_3/scan.txt"
