@@ -113,7 +113,7 @@ pipeline {
                 }
             }
         }
-        stage('Docker Push') {
+        stage('Docker Image Push - Dockerhub') {
             when{
                 expression { params.action == 'create'}
             }
