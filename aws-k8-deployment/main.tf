@@ -13,9 +13,11 @@ module "k8-mgmt" {
 }
  
 
-#   provisioner "local-exec" {
+  provisioner "local-exec" {
+    command = "echo Instance with ${aws_instance.ec2_instance.public_ip} ${aws_instance.ec2_instance.private_ip} Created!! >> /tmp/ec2details.txt"
+  }
 
-#   }
+  
 
 
 #   connection {
