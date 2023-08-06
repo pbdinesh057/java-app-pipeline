@@ -9,8 +9,7 @@ module "k8-mgmt" {
   bucket_name = "k8-config-backend"
   aws_region = "us-east-1"
   tags = "Testing"
-  ssh_key_name = "all"
-  pem_private_key_path = "/tmp/all.pem"
+  ssh_key_name = "/tmp/all.pem"
 }
 
 
