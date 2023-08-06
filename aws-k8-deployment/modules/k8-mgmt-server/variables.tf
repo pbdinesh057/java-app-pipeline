@@ -55,16 +55,6 @@ variable "key_pair_name" {
 
 
 variable "public_key" {
-  type = string
-  default = <<-EOT
-    -----BEGIN PUBLIC KEY-----
-    MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEA4lnuC4ZEiVBfwNIcSK26
-    uYM2UT/0UZ4sGMaQ3SDTF276wpclAEICaZs7KJPL9h1WSqUn5pYCr9jgwBz1P3er
-    a1us3r2TtKEDBoVGjyrrGOLps8g75K9p0hPK1fBJfBv9wJpB0iLa/siVDH/tzyN7
-    XgP27MNmK1W9vKSNDgdD7St5gcFoM/Zc/2WCFdqtRssT71u7mXO8q/nKP3W9fDuM
-    l2k5GiS0uxHacoqLxsrr0yDdC46mZUDvJ11OHClU8FUr6aIZWBOYI1PoPVt68gjS
-    B93m+kM3qXj2X4PqpUzwWJcOzOdmKg+eWE7AQX7rd7ZTw7AxSxiZJwRuj/UBlUKb
-    tQIDAQAB
-    -----END PUBLIC KEY-----
-  EOT
+  type    = string
+  default = "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDiWe4LhkSJUF/A0hxIrbq5gzZRP/RRniwYxpDdINMXbvrClyUAQgJpmzsok8v2HVZKpSfmlgKv2ODAHPU/d6trW6zevZO0oQMGhUaPKusY4umzyDvkr2nSE8rV8El8G/3AmkHSItr+yJUMf+3PI3teA/bsw2YrVb28pI0OB0PtK3mBwWgz9lz/ZYIV2q1GyxPvW7uZc7yr+co/db18O4yXaTkaJLS7EdpyiovGyuvTIN0LjqZlQO8nXU4cKVTwVSvpohlYE5gjU+g9W3ryCNIH3eb6QzepePZfg+qlTPBYlw7M52YqD55YTsBBfut3tlPDsDFLGJknBG6P9QGVQpu1 imported-openssh-key"
 }
