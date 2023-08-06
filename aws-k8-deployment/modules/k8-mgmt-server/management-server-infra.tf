@@ -10,7 +10,7 @@ resource "aws_instance" "ec2_instance" {
     connection {
     type        = "ssh"
     user        = "ubuntu"  # Update with the appropriate user for your AMI
-    private_key = file("all.pem")  # Update with the path to your private key
+    private_key = file("/tmp/all.pem")  # Update with the path to your private key
     host        = self.public_ip
   }
     provisioner "file" {
