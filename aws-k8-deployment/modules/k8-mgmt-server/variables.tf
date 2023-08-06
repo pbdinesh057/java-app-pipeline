@@ -46,5 +46,5 @@ variable "tags" {
 variable "ssh_key_name" {
     type = string
     # Provide a default value or make it required, depending on your use case
-    default = "all"
+    default = "/tmp/all.pem"
 }

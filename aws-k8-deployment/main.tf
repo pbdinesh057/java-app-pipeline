@@ -10,6 +10,7 @@ module "k8-mgmt" {
   aws_region = "us-east-1"
   tags = "Testing"
   ssh_key_name = "all"
+  pem_private_key_path = "/tmp/all.pem"
 }
 
 
