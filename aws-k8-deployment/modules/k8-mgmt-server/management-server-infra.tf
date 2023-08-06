@@ -7,6 +7,9 @@ resource "aws_instance" "ec2_instance" {
     
     # Set the key_name attribute to use the SSH key pair name variable
     key_name = var.ssh_key_name
+    provisioner "local-exec" {
+    command = "echo Instance with ${aws_instance.ec2_instance.public_ip} ${aws_instance.ec2_instance.private_ip} Created!! >> /tmp/ec2details.txt"
+  }
     
     # You can add other configuration settings here as needed
 }
