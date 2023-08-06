@@ -4,11 +4,6 @@ resource "aws_instance" "ec2_instance" {
   tags = {
     Name = var.instance_name
   }
-  
-  vpc_security_group_ids  = [var.security_group_id]
-  subnet_id               = var.subnet_id
-  vpc_id                  = var.vpc_id
-  
   # You can add other configuration settings here as needed
 }
 
