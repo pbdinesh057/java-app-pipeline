@@ -9,34 +9,34 @@ module "k8-mgmt" {
   bucket_name = "k8-config-backend"
   aws_region = "us-east-1"
   tags = "Testing"
+  ssh_key_name = "all"
 }
  
 
-  provisioner "local-exec" {
-    source      = "setup_kubernetes.sh"
-    destination = "~/setup_kubernetes.sh"
-  }
+#   provisioner "local-exec" {
+
+#   }
 
 
-  connection {
-    type        = "ssh"
-    user        = "ubuntu"  # Update with the appropriate user for your AMI
-    private_key = file("~/.ssh/id_rsa")  # Update with the path to your private key
-    host        = self.public_ip
-  }
+#   connection {
+#     type        = "ssh"
+#     user        = "ubuntu"  # Update with the appropriate user for your AMI
+#     private_key = file("~/.ssh/id_rsa")  # Update with the path to your private key
+#     host        = self.public_ip
+#   }
 
-  provisioner "file" {
-    source      = "setup_kubernetes.sh"
-    destination = "~/setup_kubernetes.sh"
-  }
+#   provisioner "file" {
+#     source      = "setup_kubernetes.sh"
+#     destination = "~/setup_kubernetes.sh"
+#   }
 
-  # Execute the shell script on the instance after it is copied
-  provisioner "remote-exec" {
-    inline = [
-      "chmod +x ~/setup_kubernetes.sh",
-      "bash ~/setup_kubernetes.sh"
-    ]
-  }
+#   # Execute the shell script on the instance after it is copied
+#   provisioner "remote-exec" {
+#     inline = [
+#       "chmod +x ~/setup_kubernetes.sh",
+#       "bash ~/setup_kubernetes.sh"
+#     ]
+#   }
 
 
 

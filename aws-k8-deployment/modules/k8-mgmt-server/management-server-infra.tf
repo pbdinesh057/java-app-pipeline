@@ -1,15 +1,18 @@
 resource "aws_instance" "ec2_instance" {
-  ami           = var.ami
-  instance_type = var.instance_type
-  tags = {
-    Name = var.instance_name
-  }
-  # You can add other configuration settings here as needed
+    ami           = var.ami
+    instance_type = var.instance_type
+    tags = {
+        Name = var.instance_name
+    }
+    
+    # Set the key_name attribute to use the SSH key pair name variable
+    key_name = var.ssh_key_name
+    
+    # You can add other configuration settings here as needed
 }
 
-
 resource "aws_s3_bucket" "s3-backend" {
-  bucket = var.bucket_name
-  #acl    = "private"  # Change this to set the bucket ACL (e.g., "public-read"
-  # You can add other configuration settings here as needed, like tags, logging, etc.
+    bucket = var.bucket_name
+    #acl    = "private"  # Change this to set the bucket ACL (e.g., "public-read")
+    # You can add other configuration settings here as needed, like tags, logging, etc.
 }
