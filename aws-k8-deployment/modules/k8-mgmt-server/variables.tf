@@ -43,8 +43,26 @@ variable "tags" {
 }
 
 # Add a new variable for the SSH key pair name
-variable "ssh_key_name" {
-    type = string
-    # Provide a default value or make it required, depending on your use case
-    default = "/tmp/all.pem"
+# variable "ssh_key_name" {
+#     type = string
+#     # Provide a default value or make it required, depending on your use case
+#     default = "/tmp/all.pem"
+# }
+variable "key_pair_name" {
+  type    = string
+  default = "login_key"
+}
+
+
+variable "public_key" {
+  type    = string
+  default = "-----BEGIN PUBLIC KEY-----
+MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEA4lnuC4ZEiVBfwNIcSK26
+uYM2UT/0UZ4sGMaQ3SDTF276wpclAEICaZs7KJPL9h1WSqUn5pYCr9jgwBz1P3er
+a1us3r2TtKEDBoVGjyrrGOLps8g75K9p0hPK1fBJfBv9wJpB0iLa/siVDH/tzyN7
+XgP27MNmK1W9vKSNDgdD7St5gcFoM/Zc/2WCFdqtRssT71u7mXO8q/nKP3W9fDuM
+l2k5GiS0uxHacoqLxsrr0yDdC46mZUDvJ11OHClU8FUr6aIZWBOYI1PoPVt68gjS
+B93m+kM3qXj2X4PqpUzwWJcOzOdmKg+eWE7AQX7rd7ZTw7AxSxiZJwRuj/UBlUKb
+tQIDAQAB
+-----END PUBLIC KEY-----"
 }

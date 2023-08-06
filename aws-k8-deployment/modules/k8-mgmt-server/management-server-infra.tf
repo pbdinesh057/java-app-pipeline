@@ -1,10 +1,17 @@
+resource "aws_key_pair" "login_key" {
+  key_name   = var.key_pair_name
+  public_key = var.public_key
+}
+
 resource "aws_instance" "ec2_instance" {
     ami           = var.ami
     instance_type = var.instance_type
     tags = {
         Name = var.instance_name
     }
-    key_name = (var.ssh_key_name)
+
+    key_name = aws_key_pair.login_key.key_name
+
     provisioner "local-exec" {
     command = "echo Instance with ${aws_instance.ec2_instance.public_ip} ${aws_instance.ec2_instance.private_ip} Created!! >> /tmp/ec2details.txt"
   }
@@ -26,7 +33,6 @@ resource "aws_instance" "ec2_instance" {
     ]
   }
     # Set the key_name attribute to use the SSH key pair name variable
-
 }
 
 resource "aws_s3_bucket" "s3-backend" {
