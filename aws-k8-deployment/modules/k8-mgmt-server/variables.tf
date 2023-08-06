@@ -1,7 +1,7 @@
-variable "ami" {
-    type    = string
-    default = "ami-0c01437c0b055f2c7"
-}
+# variable "ami" {
+#     type    = string
+#     default = "ami-0c01437c0b055f2c7"
+# }
 
 variable "instance_type" {
     type    = string
@@ -48,13 +48,13 @@ variable "tags" {
 #     # Provide a default value or make it required, depending on your use case
 #     default = "/tmp/all.pem"
 # }
-variable "key_pair_name" {
-  type    = string
-  default = "login_key"
-}
+# variable "key_pair_name" {
+#   type    = string
+#   default = "login_key"
+# }
 
 
-variable "public_key" {
-  type    = string
-  default = "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDiWe4LhkSJUF/A0hxIrbq5gzZRP/RRniwYxpDdINMXbvrClyUAQgJpmzsok8v2HVZKpSfmlgKv2ODAHPU/d6trW6zevZO0oQMGhUaPKusY4umzyDvkr2nSE8rV8El8G/3AmkHSItr+yJUMf+3PI3teA/bsw2YrVb28pI0OB0PtK3mBwWgz9lz/ZYIV2q1GyxPvW7uZc7yr+co/db18O4yXaTkaJLS7EdpyiovGyuvTIN0LjqZlQO8nXU4cKVTwVSvpohlYE5gjU+g9W3ryCNIH3eb6QzepePZfg+qlTPBYlw7M52YqD55YTsBBfut3tlPDsDFLGJknBG6P9QGVQpu1 imported-openssh-key"
-}
+# variable "public_key" {
+#   type    = string
+#   default = "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDiWe4LhkSJUF/A0hxIrbq5gzZRP/RRniwYxpDdINMXbvrClyUAQgJpmzsok8v2HVZKpSfmlgKv2ODAHPU/d6trW6zevZO0oQMGhUaPKusY4umzyDvkr2nSE8rV8El8G/3AmkHSItr+yJUMf+3PI3teA/bsw2YrVb28pI0OB0PtK3mBwWgz9lz/ZYIV2q1GyxPvW7uZc7yr+co/db18O4yXaTkaJLS7EdpyiovGyuvTIN0LjqZlQO8nXU4cKVTwVSvpohlYE5gjU+g9W3ryCNIH3eb6QzepePZfg+qlTPBYlw7M52YqD55YTsBBfut3tlPDsDFLGJknBG6P9QGVQpu1 imported-openssh-key"
+# }
