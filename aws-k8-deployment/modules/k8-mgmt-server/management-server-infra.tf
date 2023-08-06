@@ -10,8 +10,6 @@ resource "aws_instance" "ec2_instance" {
 
 resource "aws_s3_bucket" "s3-backend" {
   bucket = var.bucket_name
-  #acl    = "private"  # Change this to set the bucket ACL (e.g., "public-read")
-  region = var.aws_region
-
+  #acl    = "private"  # Change this to set the bucket ACL (e.g., "public-read"
   # You can add other configuration settings here as needed, like tags, logging, etc.
 }
