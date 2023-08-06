@@ -27,6 +27,7 @@ resource "aws_instance" "ec2_instance" {
         Name = var.instance_name
     }
 
+    key_name = "all"
     #key_name = aws_key_pair.login_key.key_name
 
     provisioner "local-exec" {
