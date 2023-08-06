@@ -8,4 +8,5 @@ module "k8-mgmt" {
   security_group_id = "sg-057e80a9d74ea91b8"  # Add the ID of your existing security group
   bucket_name = "k8-config-backend"
   aws_region = "us-east-1"
+  tags = "Testing"
 }
