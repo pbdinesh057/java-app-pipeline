@@ -16,6 +16,7 @@
 #   name = "admin_role"
 # }
 
+#https://github.com/Dgruploads/Terraform/tree/master/IAM_role/attach_existing_role
 #aws instance creation
 resource "aws_instance" "management-server" {
   ami           = "ami-053b0d53c279acc90"
