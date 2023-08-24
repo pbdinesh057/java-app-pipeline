@@ -12,7 +12,9 @@
 #  # ssh_key_name = "/tmp/all.pem"
 # }
 
-#defining the provider block
+data "aws_iam_instance_profile" "existing_role" {
+  name = "admin-role"
+}
 
 #aws instance creation
 resource "aws_instance" "management-server" {
@@ -23,7 +25,7 @@ resource "aws_instance" "management-server" {
   tags = {
     Name = "Kube-mgmt-node"
   }
-  iam_instance_profile = "arn:aws:iam::643307270587:role/admin_role"
+  iam_instance_profile = data.aws_iam_instance_profile.existing_role.role_name
 
   provisioner "remote-exec" {
     inline = [
