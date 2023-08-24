@@ -13,6 +13,7 @@
 # }
 
 #defining the provider block
+
 #aws instance creation
 resource "aws_instance" "management-server" {
   ami           = "ami-053b0d53c279acc90"
@@ -22,6 +23,13 @@ resource "aws_instance" "management-server" {
   tags = {
     Name = "Kube-mgmt-node"
   }
+  user_data = <<-EOF
+              #!/bin/bash
+              # This is the user data script
+              cp ./setup_kubernetes.sh /tmp/setup_kubernetes.sh
+              chmod +x /tmp/setup_kubernetes.sh
+              bash /tmp/setup_kubernetes.sh
+              EOF
 }
 
 
