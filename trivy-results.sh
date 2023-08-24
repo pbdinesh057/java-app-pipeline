@@ -1,11 +1,11 @@
 #!/bin/sh
 
-# Set the absolute path to scan.txt
-scan_file="/var/lib/jenkins/workspace/java-devopd-project/scan.txt"
+# Set the absolute path to the scan file using the Jenkins BUILD_NUMBER
+scan_file="/var/lib/jenkins/workspace/java-devopd-project/scan-${BUILD_NUMBER}.txt"
 
-# Check if scan.txt exists
+# Check if scan file for the current build exists
 if [ ! -f "$scan_file" ]; then
-  echo "Error: $scan_file not found."
+  echo "Error: $scan_file not found for build ${BUILD_NUMBER}."
   exit 1
 fi
 
@@ -13,11 +13,11 @@ fi
 image_name=""
 vulnerability_info=""
 
-# Read scan.txt and process the results
+# Read scan file and process the results
 while IFS= read -r line; do
   # Check if the line contains "Target:"
   if [[ "$line" == "Target:"* ]]; then
-    image_name=$(echo "$line" | cut d ':' -f2 | tr -d '[:space:]')
+    image_name=$(echo "$line" | cut -d ':' -f2 | tr -d '[:space:]')
   fi
 
   # Check if the line contains vulnerability counts
