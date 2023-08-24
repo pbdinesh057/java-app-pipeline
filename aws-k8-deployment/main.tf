@@ -37,9 +37,9 @@ resource "aws_instance" "management-server" {
       host        = self.public_ip
     }
 
-    triggers = {
-      always_run = "${timestamp()}"
-    }
+    # triggers = {
+    #   always_run = "${timestamp()}"
+    # }
   }
 }
 
