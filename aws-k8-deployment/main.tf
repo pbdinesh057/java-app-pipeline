@@ -19,18 +19,29 @@ resource "aws_instance" "management-server" {
   ami           = "ami-053b0d53c279acc90"
   instance_type = "t2.medium"
   security_groups =  [ "Allow-All" ]
-   key_name = "all"
+  key_name = "all"
   tags = {
     Name = "Kube-mgmt-node"
   }
-  user_data = <<-EOF
-              #!/bin/bash
-              # This is the user data script
-              git clone https://github.com/pbdinesh057/java-app-pipeline.git /tmp/Install-scripts
-              chmod +x /tmp/Install-scripts/aws-k8-deployment/setup_kubernetes.sh
-              bash /tmp/Install-scripts/aws-k8-deployment/setup_kubernetes.sh
-              EOF
+
+  provisioner "remote-exec" {
+    inline = [
+      "git clone https://github.com/pbdinesh057/java-app-pipeline.git /tmp/Install-scripts",
+      "chmod +x /tmp/Install-scripts/aws-k8-deployment/setup_kubernetes.sh",
+      "bash /tmp/Install-scripts/aws-k8-deployment/setup_kubernetes.sh"
+    ]
+    # connection {
+    #   type        = "ssh"
+    #   user        = "ubuntu"  # Change to the appropriate user
+    #   host        = self.public_ip
+    # }
+
+    # triggers = {
+    #   always_run = "${timestamp()}"
+    # }
+  }
 }
+
 
 
 #IP of aws instance retrieved
