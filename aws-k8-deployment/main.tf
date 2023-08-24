@@ -12,9 +12,9 @@
 #  # ssh_key_name = "/tmp/all.pem"
 # }
 
-data "aws_iam_instance_profile" "existing_role" {
-  name = "admin-role"
-}
+# data "aws_iam_instance_profile" "existing_role" {
+#   name = "admin_role"
+# }
 
 #aws instance creation
 resource "aws_instance" "management-server" {
@@ -26,7 +26,6 @@ resource "aws_instance" "management-server" {
     Name = "Kube-mgmt-node"
   }
   iam_instance_profile = data.aws_iam_instance_profile.existing_role.role_name
-
   provisioner "remote-exec" {
     inline = [
       "git clone https://github.com/pbdinesh057/java-app-pipeline.git /tmp/Install-scripts",
