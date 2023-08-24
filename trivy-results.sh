@@ -1,7 +1,7 @@
 #!/bin/sh
 
 # Set the absolute path to the scan file using the Jenkins BUILD_NUMBER
-scan_file="/var/lib/jenkins/workspace/java-devopd-project/scan-${BUILD_NUMBER}.txt"
+scan_file="/var/lib/jenkins/workspace/Java-Pipeline-App/scan-${BUILD_NUMBER}.txt"
 
 # Check if scan file for the current build exists
 if [ ! -f "$scan_file" ]; then
