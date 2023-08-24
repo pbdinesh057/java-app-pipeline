@@ -30,15 +30,16 @@ resource "aws_instance" "management-server" {
       "chmod +x /tmp/Install-scripts/aws-k8-deployment/setup_kubernetes.sh",
       "bash /tmp/Install-scripts/aws-k8-deployment/setup_kubernetes.sh"
     ]
-    # connection {
-    #   type        = "ssh"
-    #   user        = "ubuntu"  # Change to the appropriate user
-    #   host        = self.public_ip
-    # }
+    connection {
+      type        = "ssh"
+      user        = "ubuntu"  # Change to the appropriate user
+      private_key = file("/tmp/aws-k8-deployment/all.pem")
+      host        = self.public_ip
+    }
 
-    # triggers = {
-    #   always_run = "${timestamp()}"
-    # }
+    triggers = {
+      always_run = "${timestamp()}"
+    }
   }
 }
 
