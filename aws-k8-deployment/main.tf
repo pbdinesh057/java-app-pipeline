@@ -23,6 +23,7 @@ resource "aws_instance" "management-server" {
   tags = {
     Name = "Kube-mgmt-node"
   }
+  iam_instance_profile = "admin-role"
 
   provisioner "remote-exec" {
     inline = [
