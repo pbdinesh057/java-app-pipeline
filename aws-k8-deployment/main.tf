@@ -13,12 +13,6 @@
 # }
 
 #defining the provider block
-provider "aws" {
-  region = "us-east-1"
-	
-}
-
-
 #aws instance creation
 resource "aws_instance" "management-server" {
   ami           = "ami-053b0d53c279acc90"
