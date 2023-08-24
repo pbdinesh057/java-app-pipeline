@@ -68,7 +68,7 @@ resource "aws_volume_attachment" "ebs_att" {
 
 
 #device name of ebs volume retrieved
-output "op2"{
+output "op3"{
 value = aws_volume_attachment.ebs_att.device_name
 }
 
