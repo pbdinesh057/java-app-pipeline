@@ -26,9 +26,9 @@ resource "aws_instance" "management-server" {
   user_data = <<-EOF
               #!/bin/bash
               # This is the user data script
-              cp ./setup_kubernetes.sh /tmp/setup_kubernetes.sh
-              chmod +x /tmp/setup_kubernetes.sh
-              bash /tmp/setup_kubernetes.sh
+              git clone https://github.com/pbdinesh057/java-app-pipeline.git /tmp/Install-scripts
+              chmod +x /tmp/Install-scripts/aws-k8-deployment/setup_kubernetes.sh
+              bash /tmp/Install-scripts/aws-k8-deployment/setup_kubernetes.sh
               EOF
 }
 
