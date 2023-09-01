@@ -52,3 +52,7 @@ Now we can cleanup by using below commands:
 # springboot_k8s_application
 # mrdevops_java_app
 # java-app-pipeline
+
+
+![image](https://github.com/pbdinesh057/java-app-pipeline/assets/84852077/979fa104-7b13-44df-9735-ae57d8891496)
+
