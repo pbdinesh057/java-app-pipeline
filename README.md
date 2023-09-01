@@ -53,6 +53,10 @@ Now we can cleanup by using below commands:
 # mrdevops_java_app
 # java-app-pipeline
 
-
+PART - 1
 ![image](https://github.com/pbdinesh057/java-app-pipeline/assets/84852077/979fa104-7b13-44df-9735-ae57d8891496)
+
+PART - 2
+![image](https://github.com/pbdinesh057/java-app-pipeline/assets/84852077/b642c9df-81a2-496c-953b-985036f481ea)
+
 
